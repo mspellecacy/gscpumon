@@ -1,4 +1,4 @@
-# Got bored, wrote code.
+# Wrote code.
 
 Don't play CSGO.
 Don't play DotA2.
@@ -8,3 +8,6 @@ Own Rival 700.
 
 
 I wanted to put my shiny new toy to some practical use, so I wrote a java app to push 'game' events, in this case CPU load and DateTime through the GameSense Engine's REST API to my mouse.
+
+## End Result
+![Functional Prototype](http://i.imgur.com/XOFwHvJ.jpg?1)
