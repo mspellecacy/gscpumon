@@ -47,7 +47,7 @@ public class GameSenseCpuMonitor {
         while (true) {
             try {
                 Double cpuLoad = CPUMonitor.getProcessCpuLoad();
-                String value = "CPU Load " + cpuLoad + "%"; // use getDateTime(); if you'd prefer something more practical. :)
+                String value = "Load " + cpuLoad + "%"; // use getDateTime(); if you'd prefer something more practical. :)
                 String eventJson = "{ \"game\": \"CPU_MONITOR\", \"event\": \"CPULOAD\", \"data\": { \"value\": \"" + value + "\" } }";
                 System.out.println("Current Load: " + cpuLoad);
                 gsService.sendGameEvent(eventJson);
