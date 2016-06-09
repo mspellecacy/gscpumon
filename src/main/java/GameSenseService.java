@@ -40,7 +40,7 @@ public class GameSenseService {
 
             HttpResponse response = httpClient.execute(post);
 
-            System.out.println(response);
+            //System.out.println(response);
 
             postSuccess = true;
         } catch (Exception ex) {
@@ -62,7 +62,7 @@ public class GameSenseService {
 
             HttpResponse response = httpClient.execute(post);
 
-            System.out.println(response);
+            //System.out.println(response);
 
             postSuccess = true;
 
@@ -86,7 +86,7 @@ public class GameSenseService {
 
             HttpResponse response = httpClient.execute(post);
 
-            System.out.println(response);
+            //System.out.println(response);
 
             postSuccess = true;
         } catch (Exception ex) {

@@ -31,6 +31,9 @@ public class GameSenseCpuMonitor {
     }
 
     public void monitorCpu() throws InterruptedException {
+
+        //HostMonitor.debugMBeanAttributes();
+
         System.out.println("Rival 700 CPU Monitor Initializing...");
         GameSenseService gsService = new GameSenseService();
 
@@ -46,9 +49,10 @@ public class GameSenseCpuMonitor {
         //Run until killed...
         while (true) {
             try {
-                Double cpuLoad = CPUMonitor.getProcessCpuLoad();
-                String value = "Load " + cpuLoad + "%"; // use getDateTime(); if you'd prefer something more practical. :)
-                String eventJson = "{ \"game\": \"CPU_MONITOR\", \"event\": \"CPULOAD\", \"data\": { \"value\": \"" + value + "\" } }";
+                Double cpuLoad = HostMonitor.getSystemCpuLoad();
+                String cpuLoadString = "Load " + cpuLoad + "%"; // use getDateTime(); if you'd prefer something more practical. :)
+                String memUsage = String.format("%1.2f", HostMonitor.getMemoryUsedPercent());
+                String eventJson = "{ \"game\": \"CPU_MONITOR\", \"event\": \"CPULOAD\", \"data\": { \"value\": \"" + memUsage + "\" } }";
                 gsService.sendGameEvent(eventJson);
             } catch (Exception ex) {
                 System.out.println("Error getting CPU Load.");
